@@ -38,6 +38,7 @@ for(i=0;i<arr.length;i++){
                 }
                 else{
                     eachHourGlass.push(addingvalue)
+                    
                 }
             
            
