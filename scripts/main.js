@@ -105,43 +105,65 @@ nam=[[10, 3],
 ,[1 ,5, 3]
 ,[4 ,8, 7]
 ,[6 ,9, 1]]
-let manno=[0,0,0,0,0]
-     let maxresult= ''
+// let manno=[0,0,0,0,0]
+//      let maxresult= ''
 
-    function arrayManipulation(h) {
+//     function arrayManipulation(h) {
        
  
-    h.forEach(res=>{
-        console.log(res)
-        change(res)
-       maxresult =Math.max(...manno)
-       console.log(maxresult)    
-    })    
+//     h.forEach(res=>{
+//         console.log(res)
+//         change(res)
+//        maxresult =Math.max(...manno)
+//        console.log(maxresult)    
+//     })    
      
-    }
+//     }
     
-    function change(k){
+//     function change(k){
        
-        console.log(k.length)
-        if(k.length == 2){
-            n=a[0]
-            m=a[1]
+//         console.log(k.length)
+//         if(k.length == 2){
+//             n=a[0]
+//             m=a[1]
+//         }
+//         else{
+       
+//         let a
+//         let b
+//         let c
+//             a=k[0]-1
+//             b=k[1]-1
+//             c=k[2]
+//             console.log(a,b,c)
+//             for (let i =a; i<=b;i++){
+//             manno[i]=manno[i]+c
+           
+//         }
+//     }
+//     console.log(manno)
+// }
+
+// arrayManipulation(nam)
+function arrayManipulation(h,queries) {
+let p=n
+     queries.forEach(s=>{
+        if(s.length ==2){
+            console.log("array is length of 2")
         }
         else{
-       
-        let a
-        let b
-        let c
-            a=k[0]-1
-            b=k[1]-1
-            c=k[2]
-            console.log(a,b,c)
-            for (let i =a; i<=b;i++){
-            manno[i]=manno[i]+c
-           
+         let man =[]
+           let a=s[0]
+           let b=s[1]
+            let k=s[2]
+            for(let j=0;j<p;j++){
+                man[j]=0
+            }
+            for(let i=a;i<=b;i++){
+                man[i]=man[i]+k
+            }
+        console.log(man)
         }
-    }
-    console.log(manno)
-}
+    })
 
-arrayManipulation(nam)
+}
