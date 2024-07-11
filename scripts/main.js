@@ -145,25 +145,88 @@ nam=[[10, 3],
 // }
 
 // arrayManipulation(nam)
-function arrayManipulation(h,queries) {
+mano=[[1 ,2 ,100],[2, 5 ,100],[3, 4 ,100]]
+nam=[[10, 3],
+,[1 ,5, 3]
+,[4 ,8, 7]
+,[6 ,9, 1]]
+function arrayManipulation(n,queries) {
+    let man =[]
 let p=n
-     queries.forEach(s=>{
-        if(s.length ==2){
-            console.log("array is length of 2")
-        }
-        else{
-         let man =[]
-           let a=s[0]
-           let b=s[1]
+for(let j=0;j<p;j++){
+    man[j]=0
+    console.log(man)
+    
+}
+     queries.forEach((s)=>{
+        
+            
+
+           let a=s[0]-1
+           let b=s[1]-1
             let k=s[2]
-            for(let j=0;j<p;j++){
-                man[j]=0
-            }
+           
             for(let i=a;i<=b;i++){
                 man[i]=man[i]+k
+                console.log(man)
             }
-        console.log(man)
-        }
+        
     })
+    console.log(man)
+    console.log(Math.max(...man))
 
 }
+arrayManipulation(5,mano)
+
+bottles=17
+exchange=3
+function waterBottles(bottles,exchange){
+    let quotient = Math.floor(bottles/exchange)
+    let remainder = Math.floor(bottles%exchange)
+    if(bottles % exchange == 0){
+        if(exchange == quotient){
+            console.log(bottles + quotient + Math.floor(exchange/quotient))
+            // return ( bottles + quotient + Math.floor(exchange/quotient))
+        }
+        else if(quotient < exchange){
+        console.log(bottles + quotient)
+        }
+        else if(quotient > exchange){
+            console.log(bottles + Math.floor(quotient/exchange)+ quotient)
+        }
+}
+    else if( bottles % exchange !== 0){
+        console.log(bottles + quotient)
+         if( quotient < exchange){
+            let result = quotient + remainder
+            console.log(result)
+            console.log(Math.floor(result/exchange))
+           return (bottles + quotient + Math.floor(result/exchange))
+        }
+        else if(quotient > exchange){
+            console.log(bottles + quotient)
+            valiation(quotient,remainder,exchange)
+            // result = quotient + remainder
+            // console.log(result) 
+            // console.log(Math.floor(result/exchange))
+            // console.log(Math.floor(result%exchange))
+
+
+            // console.log(bottles + quotient + Math.floor(result/exchange))
+        }
+}
+
+   
+}
+
+function valiation(q,r,ex){
+    let result = q + r
+    while(result < q){
+        console.log(Math.floor(result/exchange))
+        console.log(Math.floor(result%exchange))
+        result = Math.floor(result/exchange) + Math.floor(result%exchange)
+        console.log(result)
+
+    }
+}
+waterBottles(bottles,exchange)
