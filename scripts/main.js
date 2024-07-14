@@ -178,55 +178,190 @@ for(let j=0;j<p;j++){
 }
 arrayManipulation(5,mano)
 
-bottles=17
-exchange=3
-function waterBottles(bottles,exchange){
-    let quotient = Math.floor(bottles/exchange)
-    let remainder = Math.floor(bottles%exchange)
-    if(bottles % exchange == 0){
-        if(exchange == quotient){
-            console.log(bottles + quotient + Math.floor(exchange/quotient))
-            // return ( bottles + quotient + Math.floor(exchange/quotient))
-        }
-        else if(quotient < exchange){
-        console.log(bottles + quotient)
-        }
-        else if(quotient > exchange){
-            console.log(bottles + Math.floor(quotient/exchange)+ quotient)
-        }
-}
-    else if( bottles % exchange !== 0){
-        console.log(bottles + quotient)
-         if( quotient < exchange){
-            let result = quotient + remainder
-            console.log(result)
-            console.log(Math.floor(result/exchange))
-           return (bottles + quotient + Math.floor(result/exchange))
-        }
-        else if(quotient > exchange){
-            console.log(bottles + quotient)
-            valiation(quotient,remainder,exchange)
-            // result = quotient + remainder
-            // console.log(result) 
-            // console.log(Math.floor(result/exchange))
-            // console.log(Math.floor(result%exchange))
 
-
-            // console.log(bottles + quotient + Math.floor(result/exchange))
+// function waterBottles(bottles,exchange){
+//     let quotient = Math.floor(bottles/exchange)
+//     let remainder = Math.floor(bottles%exchange)
+//     let total = quotient + bottles
+//     let sum = quotient + remainder
+//     console.log(sum)
+//     if(bottles % exchange == 0){
+//         if(exchange == quotient){
+//             console.log(bottles + quotient + Math.floor(exchange/quotient))
+//             // return ( bottles + quotient + Math.floor(exchange/quotient))
+//         }
+//         else if(quotient < exchange){
+//         console.log(bottles + quotient)
+//         }
+//         else if(quotient > exchange){
+//             console.log(bottles + Math.floor(quotient/exchange)+ quotient)
+//         }
+// }
+//     else if( bottles % exchange !== 0){
+//         console.log(bottles + quotient)
+//         if( sum < exchange){
+//             let result = quotient + remainder
+//             console.log(result)
+//             console.log(Math.floor(result/exchange))
+//            return (bottles + quotient + Math.floor(result/exchange))
+//         }
+//         else if(sum >= exchange){
+//             valiation(quotient,remainder,exchange,bottles)
+//             // let result = quotient + remainder
+//             // let total = bottles + quotient
+//             // console.log(total)
+//         // console.log(total)
+//         // valiation()
+//         // for(i=sum;i >= exchange;i++){
+//         //   let partQuotient = Math.floor(sum/exchange)
+//         //   let partRemainder = Math.floor(sum%exchange)
+//         //   let result = partQuotient + partRemainder
+//         //   console.log(result)
+//         // }
+        
+// }
+// }
+// }
+// function valiation(q,r,ex,bot){
+//     let result = q + r
+//     console.log(result)
+//     let total = bot + q
+//     console.log(total)
+//     for(i=0;result >= ex;i++){
+//         if(result >= ex){
+//             console.log(total)
+//         let quot =Math.floor(result/ex)
+//         console.log(Math.floor(result%ex))
+//         result = quot + Math.floor(result%ex)
+//         console.log(result)
+//         total = total + quot
+    
+//     }
+    
+// }
+// console.log(total)
+// }
+// waterBottles(bottles,exchange)
+var numWaterBottles = function(numBottles, numExchange) {
+    let quotient = Math.floor(numBottles/numExchange)
+    let remainder = Math.floor(numBottles%numExchange)
+    let total = quotient + numBottles
+    let sum = quotient + remainder
+    if(numBottles % numExchange == 0){
+        if(numExchange == quotient){
+       return ( numBottles + quotient + Math.floor(numExchange/quotient))
+    }
+    else if(quotient < numExchange){
+        console.log(numBottles + quotient)
+        return numBottles + quotient
+    }
+    else if(sum >= numExchange){
+        let result = quotient + remainder
+        let total = numBottles + quotient
+        for(let i=0;result >= numExchange;i++){
+            if(result >= numExchange){
+            let quot = Math.floor(result/numExchange)
+            let rem = Math.floor(result%numExchange)
+            result = quot + rem
+            total = total + quot
         }
-}
-
-   
-}
-
-function valiation(q,r,ex){
-    let result = q + r
-    while(result < q){
-        console.log(Math.floor(result/exchange))
-        console.log(Math.floor(result%exchange))
-        result = Math.floor(result/exchange) + Math.floor(result%exchange)
-        console.log(result)
-
+    }
+    console.log(total)
+        console.log(numBottles + Math.floor(quotient/numExchange)+ quotient)
+      return numBottles + Math.floor(quotient/numExchange)+ quotient
     }
 }
-waterBottles(bottles,exchange)
+    else if( numBottles % numExchange !== 0){
+         if( sum < numExchange){
+            let result = quotient + remainder
+           return (numBottles + quotient + Math.floor(result/numExchange))
+        }
+        else if(sum >= numExchange){
+            let result = quotient + remainder
+    let total = numBottles + quotient
+    for(let i=0;result >= numExchange;i++){
+        if(result >= numExchange){
+        let quot = Math.floor(result/numExchange)
+        let rem = Math.floor(result%numExchange)
+        result = quot + rem
+        total = total + quot
+    }
+}
+console.log(total)
+            // valiation(quotient,remainder,numExchange,numBottles)
+    }
+
+        }
+     
+}
+function valiation(q,r,ex,bot){
+    let result = q + r
+    let total = bot + q
+    for(let i=0;result >= ex;i++){
+        if(result >= ex){
+        let quot = Math.floor(result/ex)
+        let rem = Math.floor(result%ex)
+        result = quot + rem
+        total = total + quot
+    }
+}
+console.log(total)
+}
+numWaterBottles(92,4)
+nums=[2,5,5,11]
+targets=10
+
+function target(nums,targets){
+    let indices =[]
+    for (let i =0;i < nums.length;i++ ){
+        for (let j =1;j < nums.length;j++ ){
+            let add= nums[i] + nums[j]
+           if( add == targets && indices == 0  && i!=j){
+               indices.push(i,j)
+               console.log(indices)
+           }
+          
+          
+
+        }
+}
+}
+target(nums,targets)
+
+numbe= "121"
+let reversedstring=''
+reversedstring= numbe.split('').reduce((accum,current)=>current + accum)
+console.log(reversedstring)
+// numbe.forEach(s=>{
+    // const reversedString = numbe.reduce((s,i)=>{
+    //     console.log(s,i)
+    // })
+    // console.log(reversedString)
+    // reversed=''
+// })
+// for (i=0; i < numbe.length;i++){
+//     console.log(numbe[i-1])
+// }
+// console.log(numbe.reverse())
+// if(numbe === numbe.reverse()){
+//     console.log(" true")
+// }
+// else{
+//     console.log("false")
+//     // return false
+// }
+s = "III"
+p=  {I     :    1,
+V      :     5,
+X      :    10,
+L      :    50,
+C      : 100,
+D      :   500,
+M      :  1000 }
+console.log(s.split(''))
+s.split('').forEach(f=>{
+    if(Object.keys(p).includes(f)){
+        console.log(p[f])
+    }
+})
+
