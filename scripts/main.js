@@ -350,7 +350,8 @@ console.log(reversedstring)
 //     console.log("false")
 //     // return false
 // }
-s = "III"
+s = "MCMXCIV"
+let add =0 
 p=  {I     :    1,
 V      :     5,
 X      :    10,
@@ -359,9 +360,48 @@ C      : 100,
 D      :   500,
 M      :  1000 }
 console.log(s.split(''))
-s.split('').forEach(f=>{
-    if(Object.keys(p).includes(f)){
-        console.log(p[f])
+let stored = s.split('')
+console.log(stored)
+for (i= 0; i< stored.length;i++){
+    // for(j=1;j<stored.length;j++){
+        if(stored[i] == 'I' || stored[i] == 'X' ||  stored[i] == 'C' ){
+                    console.log(stored[i])
+                 if(stored[i+1] == 'V' || stored[i+1] == 'X' || stored[i+1] == 'L' || stored[i+1] == 'C' || stored[i+1] =='D' || stored[i+1] == 'M'){
+                    add= add + (p[stored[i+1]] -p[stored[i]] )
+                     console.log(add)
+                    //    add=  curr - acc
+                    }
+                    else{
+                        add = add + p[stored[i]] 
+                        // add += p[acc]
+                        console.log(add)
+                    }
+                }
+        else{
+                    add = add + p[stored[i]] 
+                    console.log(add)
+                }
     }
-})
+// }
 
+// .reduce((acc,curr)=>{
+//     if(acc == 'I' || 'X' || 'C'){
+//         console.log(acc)
+//         console.log(curr)
+//      if(curr === 'V' || 'X'){
+//             console.log(curr)
+//             console.log(add)
+//            add=  curr - acc
+//         }
+//         else{
+//             add += p[acc]
+//             console.log(add)
+//         }
+//     }
+//     else{
+//         console.log(p[f])
+//     }
+//     // if(Object.keys(p).includes(f)){
+//     //     console.log(p[f])
+//     // }
+// })
