@@ -350,8 +350,10 @@ console.log(reversedstring)
 //     console.log("false")
 //     // return false
 // }
-s = "MCMXCIV"
+s = "MCMXCVI"
 let add =0 
+let elementStored 
+let assignBoolean
 p=  {I     :    1,
 V      :     5,
 X      :    10,
@@ -362,26 +364,146 @@ M      :  1000 }
 console.log(s.split(''))
 let stored = s.split('')
 console.log(stored)
-for (i= 0; i< stored.length;i++){
-    // for(j=1;j<stored.length;j++){
-        if(stored[i] == 'I' || stored[i] == 'X' ||  stored[i] == 'C' ){
-                    console.log(stored[i])
-                 if(stored[i+1] == 'V' || stored[i+1] == 'X' || stored[i+1] == 'L' || stored[i+1] == 'C' || stored[i+1] =='D' || stored[i+1] == 'M'){
-                    add= add + (p[stored[i+1]] -p[stored[i]] )
-                     console.log(add)
-                    //    add=  curr - acc
-                    }
-                    else{
-                        add = add + p[stored[i]] 
-                        // add += p[acc]
-                        console.log(add)
-                    }
-                }
-        else{
-                    add = add + p[stored[i]] 
-                    console.log(add)
-                }
+for (i= 0; i< stored.length ;i++ ){
+    console.log(assignBoolean)
+    console.log(stored[i])
+    if((stored[i] == 'I' || stored[i] == 'X' ||  stored[i] == 'C') && (assignBoolean ==false || assignBoolean== undefined)){
+        if(stored[i] == 'I' &&  (stored[i+1] == 'V' || stored[i+1] == 'X')){
+            add= add + (p[stored[i+1]] -p[stored[i]] )
+            assignBoolean=true
+            console.log(assignBoolean)
+            console.log(add)
+        }
+        if(stored[i] == 'X'  &&  (stored[i+1] == 'L' || stored[i+1] == 'C')){
+            add= add + (p[stored[i+1]] -p[stored[i]] )
+            assignBoolean=true
+            console.log(assignBoolean)
+            console.log(add)
+        }
+        if(stored[i] == 'C' && (stored[i+1] =='D' || stored[i+1] == 'M')){
+            add= add + (p[stored[i+1]] -p[stored[i]] )
+            assignBoolean=true
+            console.log(assignBoolean)
+            console.log(add)
+        }
+        if(assignBoolean == false || assignBoolean== undefined){
+            console.log(assignBoolean)
+            add = add + p[stored[i]] 
+            console.log(add)
+        }
+        
     }
+    else{ 
+        if(assignBoolean == false || assignBoolean == undefined){
+        add = add + p[stored[i]] 
+        console.log(add)  
+        }
+        else{
+            assignBoolean =false
+            console.log(assignBoolean)
+        }
+    }
+    }
+    console.log(add)
+
+    strs = ["flower","flow","flight"]
+
+    strs.reduce((re,cur)=>{
+        if(re.slice(0,2) === cur.slice(0,2)){
+           
+        } 
+    // console.log(re.slice(0,2))    
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // for(j=1;j<stored.length;j++){
+    //     if(stored[i] == 'I' || stored[i] == 'X' ||  stored[i] == 'C'  ){
+    //                 console.log(stored[i])
+    //                 console.log(elementStored)
+    //              if( stored[i] == 'I' &&  (stored[i+1] == 'V' || stored[i+1] == 'X') && i!=elementStored){
+    //                 console.log(stored[i+1])  
+    //                 elementStored=i+1
+    //                 console.log(elementStored)
+    //                 add= add + (p[stored[i+1]] -p[stored[i]] )
+    //                  console.log(add)
+    //                 //    add=  curr - acc
+    //                 }
+    //              if(stored[i] == 'X'  &&  (stored[i+1] == 'L' || stored[i+1] == 'C') && i!=elementStored){
+    //                 console.log(stored[i+1])
+    //                 elementStored=i+1
+    //                 assignBoolean=true
+    //                 console.log(elementStored)
+    //                 add= add + (p[stored[i+1]] -p[stored[i]] )
+    //                  console.log(add)
+    //                 //    add=  curr - acc
+    //                 }
+    //              if( stored[i] == 'C' && (stored[i+1] =='D' || stored[i+1] == 'M') && i!=elementStored){
+    //                 console.log(stored[i+1])
+    //                 elementStored=i+1
+    //                 assignBoolean=true
+    //                 console.log(elementStored)
+    //                 add= add + (p[stored[i+1]] -p[stored[i]] )
+    //                  console.log(add)
+    //                 //    add=  curr - acc
+    //                 }
+    //                 else{
+    //                     if(elementStored==undefined || (stored[i+1]==undefined && i!=elementStored ) ){
+    //                         console.log(stored[i])
+    //                     add = add + p[stored[i]] 
+    //                     // add += p[acc]
+    //                     console.log(add)  
+    //                 }
+    //                 else if(assignBoolean ==true){
+    //                     assignBoolean =false
+    //                     console.log(assignBoolean)
+    //                 }
+    //                 else{
+    //                     add = add + p[stored[i]]
+    //                 }
+    //                 }
+    //             }
+    //     else{
+    //         if(i!=elementStored){
+    //             console.log(stored[i])
+    //             add = add + p[stored[i]] 
+    //             console.log(add)  
+    //         }
+    //         else{
+    //             assignBoolean =false
+    //             console.log(assignBoolean)
+    //         }
+    //             }
+    // }
+    // console.log(add)
 // }
 
 // .reduce((acc,curr)=>{
